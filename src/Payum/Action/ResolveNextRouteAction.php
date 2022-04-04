@@ -57,6 +57,6 @@ final class ResolveNextRouteAction implements ActionInterface
         /** @var GatewayConfigInterface $gatewayConfig */
         $gatewayConfig = $paymentMethod->getGatewayConfig();
 
-        return $gatewayConfig->getFactoryName() === 'sylius.pay_pal';
+        return $gatewayConfig->getFactoryName() === 'sylius.buybox';
     }
 }

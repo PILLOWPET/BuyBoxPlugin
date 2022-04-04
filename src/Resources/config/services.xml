@@ -8,17 +8,13 @@
         <import resource="services/payum.xml"/>
     </imports>
 
-    <parameters>
-        <parameter key="sylius.paypal.prioritized_factory_name">sylius.pay_pal</parameter>
-    </parameters>
-
     <services>
         <service id="Onatera\SyliusBuyboxPlugin\Form\Extension\PaymentMethodTypeExtension">
             <tag name="form.type_extension" extended-type="Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType" />
         </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Form\Type\PayPalConfigurationType">
-            <tag name="sylius.gateway_configuration_type" type="sylius.pay_pal" label="sylius.pay_pal.label" />
+            <tag name="sylius.gateway_configuration_type" type="sylius.buybox" label="sylius.buybox.label" />
         </service>
 
         <service
@@ -188,15 +184,6 @@
             class="Onatera\SyliusBuyboxPlugin\Downloader\SftpPayoutsReportDownloader"
         >
             <argument type="service" id="sylius.paypal.client.sftp" />
-        </service>
-
-        <service
-            id="sylius.form.type.checkout_select_payment"
-            class="Onatera\SyliusBuyboxPlugin\Form\Type\SelectPaymentType"
-        >
-            <argument>%sylius.model.order.class%</argument>
-            <argument>%sylius.form.type.checkout_select_payment.validation_groups%</argument>
-            <tag name="form.type" />
         </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor">
