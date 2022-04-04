@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Processor;
+namespace Sylius\BuyboxPlugin\Processor;
 
 use Sylius\Component\Core\Model\PaymentInterface;
-use Sylius\PayPalPlugin\Exception\PayPalOrderRefundException;
+use Sylius\BuyboxPlugin\Exception\PayPalOrderRefundException;
 
 interface PaymentRefundProcessorInterface
 {

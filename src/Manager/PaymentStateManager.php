@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Manager;
+namespace Sylius\BuyboxPlugin\Manager;
 
 use Doctrine\Persistence\ObjectManager;
 use SM\Factory\FactoryInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Payment\PaymentTransitions;
 use Sylius\Component\Resource\StateMachine\StateMachineInterface;
-use Sylius\PayPalPlugin\Payum\Action\StatusAction;
-use Sylius\PayPalPlugin\Processor\PaymentCompleteProcessorInterface;
+use Sylius\BuyboxPlugin\Payum\Action\StatusAction;
+use Sylius\BuyboxPlugin\Processor\PaymentCompleteProcessorInterface;
 
 final class PaymentStateManager implements PaymentStateManagerInterface
 {

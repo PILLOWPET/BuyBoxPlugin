@@ -4,14 +4,14 @@ winzou_state_machine:
             after:
                 complete_pay_pal_order:
                     on: ['complete']
-                    do: ['@Sylius\PayPalPlugin\Processor\PayPalOrderCompleteProcessor', 'completePayPalOrder']
+                    do: ['@Sylius\BuyboxPlugin\Processor\PayPalOrderCompleteProcessor', 'completePayPalOrder']
                     args: ['object']
     sylius_payment:
         callbacks:
             before:
                 refund_pay_pal_order:
                     on: ['refund']
-                    do: ['@Sylius\PayPalPlugin\Processor\PaymentRefundProcessorInterface', 'refund']
+                    do: ['@Sylius\BuyboxPlugin\Processor\PaymentRefundProcessorInterface', 'refund']
                     args: ['object']
         transitions:
             cancel:
@@ -22,14 +22,14 @@ sylius_order:
     resources:
         order_item:
             classes:
-                controller: Sylius\PayPalPlugin\Controller\PayPalOrderItemController
+                controller: Sylius\BuyboxPlugin\Controller\PayPalOrderItemController
 
 sylius_grid:
     templates:
         action:
-            download_report: "@SyliusPayPalPlugin/Grid/downloadReport.html.twig"
-            enable_pay_pal: "@SyliusPayPalPlugin/Grid/enablePayPal.html.twig"
-            enable_seller: "@SyliusPayPalPlugin/Grid/enableSeller.html.twig"
+            download_report: "@SyliusBuyboxPlugin/Grid/downloadReport.html.twig"
+            enable_pay_pal: "@SyliusBuyboxPlugin/Grid/enablePayPal.html.twig"
+            enable_seller: "@SyliusBuyboxPlugin/Grid/enableSeller.html.twig"
     grids:
         sylius_admin_payment_method:
             actions:
@@ -54,21 +54,21 @@ sylius_ui:
         sylius.admin.payment_method.create.header:
             blocks:
                 pay_pal_logo:
-                    template: '@SyliusPayPalPlugin/payPalLogo.html.twig'
+                    template: '@SyliusBuyboxPlugin/payPalLogo.html.twig'
         sylius.shop.product.show.right_sidebar:
             blocks:
                 pay_with_pay_pal:
-                    template: '@SyliusPayPalPlugin/Buttons/productDetails.html.twig'
+                    template: '@SyliusBuyboxPlugin/Buttons/productDetails.html.twig'
                     priority: 7
         sylius.shop.cart.summary:
             blocks:
                 pay_with_pay_pal:
-                    template: '@SyliusPayPalPlugin/Buttons/cart.html.twig'
+                    template: '@SyliusBuyboxPlugin/Buttons/cart.html.twig'
                     priority: 7
         sylius.admin.payment_method.index.javascripts:
             blocks:
                 pay_pal_payment_method:
-                    template: '@SyliusPayPalPlugin/javascripts.html.twig'
+                    template: '@SyliusBuyboxPlugin/javascripts.html.twig'
                     priority: -100
 
 monolog:

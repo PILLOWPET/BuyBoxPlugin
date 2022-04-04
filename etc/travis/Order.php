@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Entity;
+namespace Sylius\BuyboxPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Order as BaseOrder;

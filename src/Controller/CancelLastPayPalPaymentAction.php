@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Doctrine\Persistence\ObjectManager;
 use SM\Factory\FactoryInterface;

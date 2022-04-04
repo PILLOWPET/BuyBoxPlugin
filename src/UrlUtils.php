@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin;
+namespace Sylius\BuyboxPlugin;
 
 /**
  * Code copied from https://github.com/Nyholm/append_query_string.

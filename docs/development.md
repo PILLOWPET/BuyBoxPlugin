@@ -1,7 +1,7 @@
 ## Development
 
 ```bash
-git clone git@github.com:Sylius/PayPalPlugin.git
+git clone git@github.com:Sylius/BuyboxPlugin.git
 (cd tests/Application && yarn install)
 (cd tests/Application && yarn build)
 (cd tests/Application && bin/console assets:install)

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Onboarding\Initiator;
+namespace Sylius\BuyboxPlugin\Onboarding\Initiator;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 

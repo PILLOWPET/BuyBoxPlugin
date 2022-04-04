@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Provider;
+namespace Sylius\BuyboxPlugin\Provider;
 
-use Sylius\PayPalPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\PayPalPlugin\Api\GenericApiInterface;
-use Sylius\PayPalPlugin\Exception\PayPalWrongDataException;
+use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Sylius\BuyboxPlugin\Api\GenericApiInterface;
+use Sylius\BuyboxPlugin\Exception\PayPalWrongDataException;
 
 final class PayPalRefundDataProvider implements PayPalRefundDataProviderInterface
 {

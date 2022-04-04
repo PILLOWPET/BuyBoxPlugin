@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Factory;
+namespace Sylius\BuyboxPlugin\Factory;
 
 use Sylius\Bundle\ResourceBundle\Controller\NewResourceFactoryInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use Sylius\PayPalPlugin\Onboarding\Processor\OnboardingProcessorInterface;
+use Sylius\BuyboxPlugin\Onboarding\Processor\OnboardingProcessorInterface;
 
 final class PayPalPaymentMethodNewResourceFactory implements NewResourceFactoryInterface
 {

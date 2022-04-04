@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin;
+namespace Sylius\BuyboxPlugin;
 
 use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class SyliusPayPalPlugin extends Bundle
+final class SyliusBuyboxPlugin extends Bundle
 {
     use SyliusPluginTrait;
 }

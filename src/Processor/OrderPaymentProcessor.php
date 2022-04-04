@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Processor;
+namespace Sylius\BuyboxPlugin\Processor;
 
 use SM\Factory\FactoryInterface;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;

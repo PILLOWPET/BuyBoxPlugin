@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\ApiPlatform;
+namespace Sylius\BuyboxPlugin\ApiPlatform;
 
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Provider\AvailableCountriesProviderInterface;
+use Sylius\BuyboxPlugin\Provider\AvailableCountriesProviderInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 

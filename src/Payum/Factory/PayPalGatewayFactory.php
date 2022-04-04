@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Payum\Factory;
+namespace Sylius\BuyboxPlugin\Payum\Factory;
 
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
-use Sylius\PayPalPlugin\Payum\Action\StatusAction;
+use Sylius\BuyboxPlugin\Payum\Action\StatusAction;
 
 final class PayPalGatewayFactory extends GatewayFactory
 {

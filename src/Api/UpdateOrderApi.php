@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Api;
+namespace Sylius\BuyboxPlugin\Api;
 
 use Sylius\Component\Core\Model\AddressInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
-use Sylius\PayPalPlugin\Client\PayPalClientInterface;
-use Sylius\PayPalPlugin\Model\PayPalPurchaseUnit;
-use Sylius\PayPalPlugin\Provider\PaymentReferenceNumberProviderInterface;
-use Sylius\PayPalPlugin\Provider\PayPalItemDataProviderInterface;
+use Sylius\BuyboxPlugin\Client\PayPalClientInterface;
+use Sylius\BuyboxPlugin\Model\PayPalPurchaseUnit;
+use Sylius\BuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface;
+use Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface;
 
 final class UpdateOrderApi implements UpdateOrderApiInterface
 {

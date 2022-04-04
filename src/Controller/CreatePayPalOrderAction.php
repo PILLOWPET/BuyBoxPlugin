@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Doctrine\Persistence\ObjectManager;
 use Payum\Core\Payum;
 use SM\Factory\FactoryInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\PayPalPlugin\Manager\PaymentStateManagerInterface;
-use Sylius\PayPalPlugin\Provider\OrderProviderInterface;
-use Sylius\PayPalPlugin\Resolver\CapturePaymentResolverInterface;
+use Sylius\BuyboxPlugin\Manager\PaymentStateManagerInterface;
+use Sylius\BuyboxPlugin\Provider\OrderProviderInterface;
+use Sylius\BuyboxPlugin\Resolver\CapturePaymentResolverInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

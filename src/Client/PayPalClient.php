@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Client;
+namespace Sylius\BuyboxPlugin\Client;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ConnectException;
@@ -20,10 +20,10 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
-use Sylius\PayPalPlugin\Exception\PayPalApiTimeoutException;
-use Sylius\PayPalPlugin\Exception\PayPalAuthorizationException;
-use Sylius\PayPalPlugin\Provider\PayPalConfigurationProviderInterface;
-use Sylius\PayPalPlugin\Provider\UuidProviderInterface;
+use Sylius\BuyboxPlugin\Exception\PayPalApiTimeoutException;
+use Sylius\BuyboxPlugin\Exception\PayPalAuthorizationException;
+use Sylius\BuyboxPlugin\Provider\PayPalConfigurationProviderInterface;
+use Sylius\BuyboxPlugin\Provider\UuidProviderInterface;
 
 final class PayPalClient implements PayPalClientInterface
 {

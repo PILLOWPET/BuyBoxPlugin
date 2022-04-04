@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Exception;
+namespace Sylius\BuyboxPlugin\Exception;
 
 final class PayPalOrderRefundException extends \Exception
 {

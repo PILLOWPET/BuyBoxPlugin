@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Payum\Action;
+namespace Sylius\BuyboxPlugin\Payum\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;

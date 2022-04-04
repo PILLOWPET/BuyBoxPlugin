@@ -11,17 +11,17 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Api;
+namespace Sylius\BuyboxPlugin\Api;
 
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Client\PayPalClientInterface;
-use Sylius\PayPalPlugin\Model\PayPalOrder;
-use Sylius\PayPalPlugin\Model\PayPalPurchaseUnit;
-use Sylius\PayPalPlugin\Provider\PaymentReferenceNumberProviderInterface;
-use Sylius\PayPalPlugin\Provider\PayPalItemDataProviderInterface;
+use Sylius\BuyboxPlugin\Client\PayPalClientInterface;
+use Sylius\BuyboxPlugin\Model\PayPalOrder;
+use Sylius\BuyboxPlugin\Model\PayPalPurchaseUnit;
+use Sylius\BuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface;
+use Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface;
 use Webmozart\Assert\Assert;
 
 final class CreateOrderApi implements CreateOrderApiInterface

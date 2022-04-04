@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Onboarding\Processor;
+namespace Sylius\BuyboxPlugin\Onboarding\Processor;
 
 use GuzzleHttp\ClientInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PayPalPluginException;
-use Sylius\PayPalPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
-use Sylius\PayPalPlugin\Exception\PayPalWebhookUrlNotValidException;
-use Sylius\PayPalPlugin\Registrar\SellerWebhookRegistrarInterface;
+use Sylius\BuyboxPlugin\Exception\BuyboxPluginException;
+use Sylius\BuyboxPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
+use Sylius\BuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
+use Sylius\BuyboxPlugin\Registrar\SellerWebhookRegistrarInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Webmozart\Assert\Assert;
 
@@ -58,7 +58,7 @@ final class BasicOnboardingProcessor implements OnboardingProcessorInterface
         $response = (array) json_decode($checkPartnerReferralsResponse->getBody()->getContents(), true);
 
         if (!isset($response['client_id']) || !isset($response['client_secret'])) {
-            throw new PayPalPluginException();
+            throw new BuyboxPluginException();
         }
 
         $gatewayConfig->setConfig([

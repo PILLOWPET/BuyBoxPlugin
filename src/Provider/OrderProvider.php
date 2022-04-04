@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Provider;
+namespace Sylius\BuyboxPlugin\Provider;
 
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\PayPalPlugin\Exception\OrderNotFoundException;
+use Sylius\BuyboxPlugin\Exception\OrderNotFoundException;
 
 final class OrderProvider implements OrderProviderInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Command;
+namespace Sylius\BuyboxPlugin\Command;
 
 use Doctrine\Persistence\ObjectManager;
 use Payum\Core\Model\GatewayConfigInterface;
@@ -11,9 +11,9 @@ use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Repository\PaymentRepositoryInterface;
 use Sylius\Component\Payment\PaymentTransitions;
-use Sylius\PayPalPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\PayPalPlugin\Api\OrderDetailsApiInterface;
-use Sylius\PayPalPlugin\Payum\Action\StatusAction;
+use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface;
+use Sylius\BuyboxPlugin\Payum\Action\StatusAction;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

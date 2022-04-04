@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Repository\PaymentMethodRepositoryInterface;
-use Sylius\PayPalPlugin\Downloader\PayoutsReportDownloaderInterface;
+use Sylius\BuyboxPlugin\Downloader\PayoutsReportDownloaderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Webmozart\Assert\Assert;

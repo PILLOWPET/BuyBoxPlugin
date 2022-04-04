@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Enabler;
+namespace Sylius\BuyboxPlugin\Enabler;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
+use Sylius\BuyboxPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
 
 interface PaymentMethodEnablerInterface
 {

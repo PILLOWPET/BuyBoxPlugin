@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Client;
+namespace Sylius\BuyboxPlugin\Client;
 
-use Sylius\PayPalPlugin\Exception\PayPalAuthorizationException;
+use Sylius\BuyboxPlugin\Exception\PayPalAuthorizationException;
 
 interface PayPalClientInterface
 {

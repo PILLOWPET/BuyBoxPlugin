@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Listener;
+namespace Sylius\BuyboxPlugin\Listener;
 
 use Payum\Core\Model\GatewayConfigInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PayPalPaymentMethodNotFoundException;
-use Sylius\PayPalPlugin\Onboarding\Initiator\OnboardingInitiatorInterface;
-use Sylius\PayPalPlugin\Provider\PayPalPaymentMethodProviderInterface;
+use Sylius\BuyboxPlugin\Exception\PayPalPaymentMethodNotFoundException;
+use Sylius\BuyboxPlugin\Onboarding\Initiator\OnboardingInitiatorInterface;
+use Sylius\BuyboxPlugin\Provider\PayPalPaymentMethodProviderInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Generator;
+namespace Sylius\BuyboxPlugin\Generator;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 

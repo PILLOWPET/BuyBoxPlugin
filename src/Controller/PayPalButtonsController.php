@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Locale\Context\LocaleContextInterface;
-use Sylius\PayPalPlugin\Processor\LocaleProcessorInterface;
-use Sylius\PayPalPlugin\Provider\AvailableCountriesProviderInterface;
-use Sylius\PayPalPlugin\Provider\PayPalConfigurationProviderInterface;
+use Sylius\BuyboxPlugin\Processor\LocaleProcessorInterface;
+use Sylius\BuyboxPlugin\Provider\AvailableCountriesProviderInterface;
+use Sylius\BuyboxPlugin\Provider\PayPalConfigurationProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -62,7 +62,7 @@ final class PayPalButtonsController
         $channel = $this->channelContext->getChannel();
 
         try {
-            return new Response($this->twig->render('@SyliusPayPalPlugin/payFromProductPage.html.twig', [
+            return new Response($this->twig->render('@SyliusBuyboxPlugin/payFromProductPage.html.twig', [
                 'available_countries' => $this->availableCountriesProvider->provide(),
                 'clientId' => $this->payPalConfigurationProvider->getClientId($channel),
                 'completeUrl' => $this->router->generate('sylius_shop_checkout_complete'),
@@ -85,7 +85,7 @@ final class PayPalButtonsController
         $order = $this->orderRepository->find($orderId);
 
         try {
-            return new Response($this->twig->render('@SyliusPayPalPlugin/payFromCartPage.html.twig', [
+            return new Response($this->twig->render('@SyliusBuyboxPlugin/payFromCartPage.html.twig', [
                 'available_countries' => $this->availableCountriesProvider->provide(),
                 'clientId' => $this->payPalConfigurationProvider->getClientId($channel),
                 'completeUrl' => $this->router->generate('sylius_shop_checkout_complete'),
@@ -111,7 +111,7 @@ final class PayPalButtonsController
         $order = $this->orderRepository->find($orderId);
 
         try {
-            return new Response($this->twig->render('@SyliusPayPalPlugin/payFromPaymentPage.html.twig', [
+            return new Response($this->twig->render('@SyliusBuyboxPlugin/payFromPaymentPage.html.twig', [
                 'available_countries' => $this->availableCountriesProvider->provide(),
                 'cancelPayPalPaymentUrl' => $this->router->generate('sylius_paypal_plugin_cancel_payment'),
                 'clientId' => $this->payPalConfigurationProvider->getClientId($channel),

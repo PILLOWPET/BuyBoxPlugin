@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Processor;
+namespace Sylius\BuyboxPlugin\Processor;
 
 use Payum\Core\Model\GatewayConfigInterface;
 use Payum\Core\Payum;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Payum\Request\CompleteOrder;
+use Sylius\BuyboxPlugin\Payum\Request\CompleteOrder;
 
 final class PayPalPaymentCompleteProcessor implements PaymentCompleteProcessorInterface
 {

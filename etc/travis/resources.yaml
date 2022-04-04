@@ -2,4 +2,4 @@ sylius_order:
     resources:
         order:
             classes:
-                model: Sylius\PayPalPlugin\Entity\Order
+                model: Sylius\BuyboxPlugin\Entity\Order

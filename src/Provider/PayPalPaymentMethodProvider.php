@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Provider;
+namespace Sylius\BuyboxPlugin\Provider;
 
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Repository\PaymentMethodRepositoryInterface;
-use Sylius\PayPalPlugin\Exception\PayPalPaymentMethodNotFoundException;
+use Sylius\BuyboxPlugin\Exception\PayPalPaymentMethodNotFoundException;
 
 final class PayPalPaymentMethodProvider implements PayPalPaymentMethodProviderInterface
 {

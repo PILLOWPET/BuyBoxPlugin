@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Provider;
+namespace Sylius\BuyboxPlugin\Provider;
 
 use Sylius\Component\Addressing\Model\CountryInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;

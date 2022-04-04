@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Api;
+namespace Sylius\BuyboxPlugin\Api;
 
-use Sylius\PayPalPlugin\Client\PayPalClientInterface;
+use Sylius\BuyboxPlugin\Client\PayPalClientInterface;
 
 final class CompleteOrderApi implements CompleteOrderApiInterface
 {

@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Downloader;
+namespace Sylius\BuyboxPlugin\Downloader;
 
 use phpseclib\Net\SFTP;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PayPalReportDownloadException;
-use Sylius\PayPalPlugin\Model\Report;
+use Sylius\BuyboxPlugin\Exception\PayPalReportDownloadException;
+use Sylius\BuyboxPlugin\Model\Report;
 
 final class SftpPayoutsReportDownloader implements PayoutsReportDownloaderInterface
 {

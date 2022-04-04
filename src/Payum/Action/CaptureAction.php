@@ -11,16 +11,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Payum\Action;
+namespace Sylius\BuyboxPlugin\Payum\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Core\Request\Capture;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\PayPalPlugin\Api\CreateOrderApiInterface;
-use Sylius\PayPalPlugin\Provider\UuidProviderInterface;
+use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Sylius\BuyboxPlugin\Api\CreateOrderApiInterface;
+use Sylius\BuyboxPlugin\Provider\UuidProviderInterface;
 
 final class CaptureAction implements ActionInterface
 {

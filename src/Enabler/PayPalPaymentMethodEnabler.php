@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Enabler;
+namespace Sylius\BuyboxPlugin\Enabler;
 
 use Doctrine\Persistence\ObjectManager;
 use GuzzleHttp\Client;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
-use Sylius\PayPalPlugin\Registrar\SellerWebhookRegistrarInterface;
+use Sylius\BuyboxPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
+use Sylius\BuyboxPlugin\Registrar\SellerWebhookRegistrarInterface;
 
 final class PayPalPaymentMethodEnabler implements PaymentMethodEnablerInterface
 {

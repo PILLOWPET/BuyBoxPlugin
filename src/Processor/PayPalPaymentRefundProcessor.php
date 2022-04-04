@@ -11,19 +11,19 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Processor;
+namespace Sylius\BuyboxPlugin\Processor;
 
 use GuzzleHttp\Exception\ClientException;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\PayPalPlugin\Api\OrderDetailsApiInterface;
-use Sylius\PayPalPlugin\Api\RefundPaymentApiInterface;
-use Sylius\PayPalPlugin\Exception\PayPalOrderRefundException;
-use Sylius\PayPalPlugin\Generator\PayPalAuthAssertionGeneratorInterface;
-use Sylius\PayPalPlugin\Provider\RefundReferenceNumberProviderInterface;
+use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface;
+use Sylius\BuyboxPlugin\Api\RefundPaymentApiInterface;
+use Sylius\BuyboxPlugin\Exception\PayPalOrderRefundException;
+use Sylius\BuyboxPlugin\Generator\PayPalAuthAssertionGeneratorInterface;
+use Sylius\BuyboxPlugin\Provider\RefundReferenceNumberProviderInterface;
 
 final class PayPalPaymentRefundProcessor implements PaymentRefundProcessorInterface
 {

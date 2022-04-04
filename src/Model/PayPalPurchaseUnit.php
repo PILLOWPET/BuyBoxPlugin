@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Model;
+namespace Sylius\BuyboxPlugin\Model;
 
 use Sylius\Component\Core\Model\AddressInterface;
 use Webmozart\Assert\Assert;

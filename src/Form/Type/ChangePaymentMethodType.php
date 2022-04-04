@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Form\Type;
+namespace Sylius\BuyboxPlugin\Form\Type;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 use Symfony\Component\Form\AbstractType;

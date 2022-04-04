@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller\Webhook;
+namespace Sylius\BuyboxPlugin\Controller\Webhook;
 
 use Doctrine\Persistence\ObjectManager;
 use SM\Factory\FactoryInterface;
 use Sylius\Component\Payment\PaymentTransitions;
 use Sylius\Component\Resource\StateMachine\StateMachineInterface;
-use Sylius\PayPalPlugin\Exception\PaymentNotFoundException;
-use Sylius\PayPalPlugin\Exception\PayPalWrongDataException;
-use Sylius\PayPalPlugin\Provider\PaymentProviderInterface;
-use Sylius\PayPalPlugin\Provider\PayPalRefundDataProviderInterface;
+use Sylius\BuyboxPlugin\Exception\PaymentNotFoundException;
+use Sylius\BuyboxPlugin\Exception\PayPalWrongDataException;
+use Sylius\BuyboxPlugin\Provider\PaymentProviderInterface;
+use Sylius\BuyboxPlugin\Provider\PayPalRefundDataProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

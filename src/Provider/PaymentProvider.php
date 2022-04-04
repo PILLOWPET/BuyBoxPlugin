@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Provider;
+namespace Sylius\BuyboxPlugin\Provider;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Repository\PaymentRepositoryInterface;
-use Sylius\PayPalPlugin\Exception\PaymentNotFoundException;
+use Sylius\BuyboxPlugin\Exception\PaymentNotFoundException;
 
 final class PaymentProvider implements PaymentProviderInterface
 {

@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Model;
+namespace Sylius\BuyboxPlugin\Model;
 
 final class Report
 {

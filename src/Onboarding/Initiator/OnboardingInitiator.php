@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Onboarding\Initiator;
+namespace Sylius\BuyboxPlugin\Onboarding\Initiator;
 
 use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\UrlUtils;
+use Sylius\BuyboxPlugin\UrlUtils;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Security;
 

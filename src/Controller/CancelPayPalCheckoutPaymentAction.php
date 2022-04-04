@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
-use Sylius\PayPalPlugin\Manager\PaymentStateManagerInterface;
-use Sylius\PayPalPlugin\Provider\PaymentProviderInterface;
+use Sylius\BuyboxPlugin\Manager\PaymentStateManagerInterface;
+use Sylius\BuyboxPlugin\Provider\PaymentProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;

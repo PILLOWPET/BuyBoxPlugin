@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\DependencyInjection;
+namespace Sylius\BuyboxPlugin\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
@@ -58,14 +58,14 @@ final class SyliusPayPalExtension extends Extension implements PrependExtensionI
             'migrations_paths' => \array_merge(
                 $migrationsPath ?? [],
                 [
-                    'Sylius\PayPalPlugin\Migrations' => '@SyliusPayPalPlugin/Migrations',
+                    'Sylius\BuyboxPlugin\Migrations' => '@SyliusBuyboxPlugin/Migrations',
                 ]
             ),
         ]);
 
         $container->prependExtensionConfig('sylius_labs_doctrine_migrations_extra', [
             'migrations' => [
-                'Sylius\PayPalPlugin\Migrations' => ['Sylius\Bundle\CoreBundle\Migrations'],
+                'Sylius\BuyboxPlugin\Migrations' => ['Sylius\Bundle\CoreBundle\Migrations'],
             ],
         ]);
     }

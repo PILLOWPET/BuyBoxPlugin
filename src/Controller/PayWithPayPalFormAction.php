@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Repository\PaymentRepositoryInterface;
-use Sylius\PayPalPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\PayPalPlugin\Api\IdentityApiInterface;
-use Sylius\PayPalPlugin\Provider\AvailableCountriesProviderInterface;
+use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Sylius\BuyboxPlugin\Api\IdentityApiInterface;
+use Sylius\BuyboxPlugin\Provider\AvailableCountriesProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
@@ -65,7 +65,7 @@ final class PayWithPayPalFormAction
         $token = $this->authorizeClientApi->authorize($paymentMethod);
         $clientToken = $this->identityApi->generateToken($token);
 
-        return new Response($this->twig->render('@SyliusPayPalPlugin/payWithPaypal.html.twig', [
+        return new Response($this->twig->render('@SyliusBuyboxPlugin/payWithPaypal.html.twig', [
             'available_countries' => $this->countriesProvider->provide(),
             'billing_address' => $order->getBillingAddress(),
             'client_id' => $clientId,

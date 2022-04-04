@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Controller;
+namespace Sylius\BuyboxPlugin\Controller;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Core\Repository\PaymentMethodRepositoryInterface;
-use Sylius\PayPalPlugin\Enabler\PaymentMethodEnablerInterface;
-use Sylius\PayPalPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
-use Sylius\PayPalPlugin\Exception\PayPalWebhookUrlNotValidException;
+use Sylius\BuyboxPlugin\Enabler\PaymentMethodEnablerInterface;
+use Sylius\BuyboxPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
+use Sylius\BuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

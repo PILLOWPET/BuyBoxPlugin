@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Registrar;
+namespace Sylius\BuyboxPlugin\Registrar;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\PayPalPlugin\Exception\PayPalWebhookUrlNotValidException;
+use Sylius\BuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
 
 interface SellerWebhookRegistrarInterface
 {

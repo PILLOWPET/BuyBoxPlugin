@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\PayPalPlugin\Api;
+namespace Sylius\BuyboxPlugin\Api;
 
 interface RefundPaymentApiInterface
 {
