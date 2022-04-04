@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Provider;
+namespace Onatera\SyliusBuyboxPlugin\Provider;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Exception\PayPalPaymentMethodNotFoundException;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalPaymentMethodNotFoundException;
 
 interface PayPalPaymentMethodProviderInterface
 {

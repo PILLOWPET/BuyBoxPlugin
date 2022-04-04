@@ -7,13 +7,13 @@
     </parameters>
     <services>
         <service
-            id="Sylius\BuyboxPlugin\Client\PayPalClientInterface"
-            class="Sylius\BuyboxPlugin\Client\PayPalClient"
+            id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface"
+            class="Onatera\SyliusBuyboxPlugin\Client\PayPalClient"
         >
             <argument type="service" id="sylius.http_client" />
             <argument type="service" id="monolog.logger.paypal" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\UuidProviderInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PayPalConfigurationProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalConfigurationProviderInterface" />
             <argument type="service" id="sylius.context.channel" />
             <argument>%sylius.pay_pal.api_base_url%</argument>
             <argument>%sylius.pay_pal.request_trials_limit%</argument>
@@ -21,10 +21,10 @@
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\AuthorizeClientApiInterface"
-            class="Sylius\BuyboxPlugin\Api\AuthorizeClientApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
         </service>
 
         <service
@@ -32,78 +32,78 @@
             class="Doctrine\ORM\EntityRepository"
         >
             <factory service="doctrine.orm.entity_manager" method="getRepository"/>
-            <argument>Sylius\BuyboxPlugin\Entity\PayPalCredentials</argument>
+            <argument>Onatera\SyliusBuyboxPlugin\Entity\PayPalCredentials</argument>
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface"
-            class="Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApi"
         >
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="sylius_pay_pal_plugin.repository.pay_pal_credentials" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\AuthorizeClientApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\UuidProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\CompleteOrderApiInterface"
-            class="Sylius\BuyboxPlugin\Api\CompleteOrderApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\GenericApiInterface"
-            class="Sylius\BuyboxPlugin\Api\GenericApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\GenericApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\GenericApi"
         >
             <argument type="service" id="sylius.http_client" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\CreateOrderApiInterface"
-            class="Sylius\BuyboxPlugin\Api\CreateOrderApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\CreateOrderApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\CreateOrderApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\IdentityApiInterface"
-            class="Sylius\BuyboxPlugin\Api\IdentityApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\IdentityApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\IdentityApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface"
-            class="Sylius\BuyboxPlugin\Api\OrderDetailsApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\WebhookApiInterface"
-            class="Sylius\BuyboxPlugin\Api\WebhookApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\WebhookApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\WebhookApi"
         >
             <argument type="service" id="sylius.http_client" />
             <argument>%sylius.pay_pal.api_base_url%</argument>
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\UpdateOrderApiInterface"
-            class="Sylius\BuyboxPlugin\Api\UpdateOrderApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Api\RefundPaymentApiInterface"
-            class="Sylius\BuyboxPlugin\Api\RefundPaymentApi"
+            id="Onatera\SyliusBuyboxPlugin\Api\RefundPaymentApiInterface"
+            class="Onatera\SyliusBuyboxPlugin\Api\RefundPaymentApi"
         >
-            <argument type="service" id="Sylius\BuyboxPlugin\Client\PayPalClientInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
         </service>
     </services>
 </container>

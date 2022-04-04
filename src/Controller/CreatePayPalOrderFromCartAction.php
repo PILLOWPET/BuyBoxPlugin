@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Controller;
+namespace Onatera\SyliusBuyboxPlugin\Controller;
 
 use Doctrine\Persistence\ObjectManager;
 use GuzzleHttp\Exception\GuzzleException;
@@ -10,8 +10,8 @@ use Payum\Core\Payum;
 use SM\Factory\FactoryInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\BuyboxPlugin\Provider\OrderProviderInterface;
-use Sylius\BuyboxPlugin\Resolver\CapturePaymentResolverInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\OrderProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolverInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

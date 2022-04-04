@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Controller;
+namespace Onatera\SyliusBuyboxPlugin\Controller;
 
 use Doctrine\Persistence\ObjectManager;
 use SM\Factory\FactoryInterface as StateMachineFactoryInterface;
@@ -14,10 +14,10 @@ use Sylius\Component\Core\OrderCheckoutTransitions;
 use Sylius\Component\Core\Repository\CustomerRepositoryInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
-use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface;
-use Sylius\BuyboxPlugin\Manager\PaymentStateManagerInterface;
-use Sylius\BuyboxPlugin\Provider\OrderProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface;
+use Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\OrderProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

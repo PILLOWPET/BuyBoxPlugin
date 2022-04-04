@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Resolver;
+namespace Onatera\SyliusBuyboxPlugin\Resolver;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 

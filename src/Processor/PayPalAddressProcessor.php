@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Processor;
 
 use Doctrine\Persistence\ObjectManager;
 use Sylius\Component\Core\Model\AddressInterface;

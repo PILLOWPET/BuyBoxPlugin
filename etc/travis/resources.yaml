@@ -2,4 +2,4 @@ sylius_order:
     resources:
         order:
             classes:
-                model: Sylius\BuyboxPlugin\Entity\Order
+                model: Onatera\SyliusBuyboxPlugin\Entity\Order

@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Api;
+namespace Onatera\SyliusBuyboxPlugin\Api;
 
-use Sylius\BuyboxPlugin\Client\PayPalClientInterface;
+use Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface;
 
 final class IdentityApi implements IdentityApiInterface
 {

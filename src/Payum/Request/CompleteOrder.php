@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Payum\Request;
+namespace Onatera\SyliusBuyboxPlugin\Payum\Request;
 
 use Payum\Core\Request\Generic;
 

@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Processor;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Resource\Exception\UpdateHandlingException;
-use Sylius\BuyboxPlugin\Exception\PayPalOrderRefundException;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalOrderRefundException;
 
 final class UiPayPalPaymentRefundProcessor implements PaymentRefundProcessorInterface
 {

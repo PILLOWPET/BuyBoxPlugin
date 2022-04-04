@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Entity;
+namespace Onatera\SyliusBuyboxPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\PaymentMethodInterface;

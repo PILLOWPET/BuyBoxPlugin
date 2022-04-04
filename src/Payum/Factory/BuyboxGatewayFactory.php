@@ -11,19 +11,19 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Payum\Factory;
+namespace Onatera\SyliusBuyboxPlugin\Payum\Factory;
 
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
-use Sylius\BuyboxPlugin\Payum\Action\StatusAction;
+use Onatera\SyliusBuyboxPlugin\Payum\Action\StatusAction;
 
-final class PayPalGatewayFactory extends GatewayFactory
+final class BuyboxGatewayFactory extends GatewayFactory
 {
     protected function populateConfig(ArrayObject $config): void
     {
         $config->defaults([
-            'payum.factory_name' => 'pay_pal',
-            'payum.factory_title' => 'Pay Pal',
+            'payum.factory_name' => 'buybox',
+            'payum.factory_title' => 'Buybox',
             'payum.action.status' => new StatusAction(),
         ]);
     }

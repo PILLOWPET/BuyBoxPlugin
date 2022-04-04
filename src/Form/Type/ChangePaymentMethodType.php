@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Form\Type;
+namespace Onatera\SyliusBuyboxPlugin\Form\Type;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 use Symfony\Component\Form\AbstractType;

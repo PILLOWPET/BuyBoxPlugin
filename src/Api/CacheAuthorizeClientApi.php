@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Api;
+namespace Onatera\SyliusBuyboxPlugin\Api;
 
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ObjectRepository;
 use Payum\Core\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Entity\PayPalCredentials;
-use Sylius\BuyboxPlugin\Entity\PayPalCredentialsInterface;
-use Sylius\BuyboxPlugin\Provider\UuidProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Entity\PayPalCredentials;
+use Onatera\SyliusBuyboxPlugin\Entity\PayPalCredentialsInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface;
 
 final class CacheAuthorizeClientApi implements CacheAuthorizeClientApiInterface
 {

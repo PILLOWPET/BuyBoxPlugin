@@ -2,4 +2,4 @@ sylius_paypal_plugin_webhook_refund_order:
     path: /paypal-webhook/api/
     methods: [POST]
     defaults:
-        _controller: Sylius\BuyboxPlugin\Controller\Webhook\RefundOrderAction
+        _controller: Onatera\SyliusBuyboxPlugin\Controller\Webhook\RefundOrderAction

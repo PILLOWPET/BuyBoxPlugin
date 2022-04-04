@@ -11,16 +11,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Payum\Action;
+namespace Onatera\SyliusBuyboxPlugin\Payum\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Core\Request\Capture;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\BuyboxPlugin\Api\CreateOrderApiInterface;
-use Sylius\BuyboxPlugin\Provider\UuidProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\CreateOrderApiInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface;
 
 final class CaptureAction implements ActionInterface
 {

@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Payum\Action;
+namespace Onatera\SyliusBuyboxPlugin\Payum\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Exception\RequestNotSupportedException;
@@ -20,14 +20,14 @@ use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Sylius\Component\Order\StateResolver\StateResolverInterface;
-use Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
-use Sylius\BuyboxPlugin\Api\CompleteOrderApiInterface;
-use Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface;
-use Sylius\BuyboxPlugin\Api\UpdateOrderApiInterface;
-use Sylius\BuyboxPlugin\Payum\Request\CompleteOrder;
-use Sylius\BuyboxPlugin\Processor\PayPalAddressProcessor;
-use Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface;
-use Sylius\BuyboxPlugin\Updater\PaymentUpdaterInterface;
+use Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApiInterface;
+use Onatera\SyliusBuyboxPlugin\Payum\Request\CompleteOrder;
+use Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor;
+use Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Updater\PaymentUpdaterInterface;
 
 final class CompleteOrderAction implements ActionInterface
 {

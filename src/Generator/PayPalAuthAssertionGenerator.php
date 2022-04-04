@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Generator;
+namespace Onatera\SyliusBuyboxPlugin\Generator;
 
 use Payum\Core\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;

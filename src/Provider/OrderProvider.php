@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Provider;
+namespace Onatera\SyliusBuyboxPlugin\Provider;
 
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
-use Sylius\BuyboxPlugin\Exception\OrderNotFoundException;
+use Onatera\SyliusBuyboxPlugin\Exception\OrderNotFoundException;
 
 final class OrderProvider implements OrderProviderInterface
 {

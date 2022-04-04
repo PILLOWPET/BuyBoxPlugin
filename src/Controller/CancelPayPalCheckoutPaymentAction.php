@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Controller;
+namespace Onatera\SyliusBuyboxPlugin\Controller;
 
-use Sylius\BuyboxPlugin\Manager\PaymentStateManagerInterface;
-use Sylius\BuyboxPlugin\Provider\PaymentProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\PaymentProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;

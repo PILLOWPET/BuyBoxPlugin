@@ -11,16 +11,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Registrar;
+namespace Onatera\SyliusBuyboxPlugin\Registrar;
 
 use GuzzleHttp\Exception\ClientException;
 use Payum\Core\Model\GatewayConfigInterface;
 use Psr\Http\Message\ResponseInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Api\AuthorizeClientApiInterface;
-use Sylius\BuyboxPlugin\Api\WebhookApiInterface;
-use Sylius\BuyboxPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
-use Sylius\BuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
+use Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface;
+use Onatera\SyliusBuyboxPlugin\Api\WebhookApiInterface;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 final class SellerWebhookRegistrar implements SellerWebhookRegistrarInterface

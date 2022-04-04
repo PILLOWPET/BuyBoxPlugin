@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Provider;
+namespace Onatera\SyliusBuyboxPlugin\Provider;
 
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Repository\PaymentRepositoryInterface;
-use Sylius\BuyboxPlugin\Exception\PaymentNotFoundException;
+use Onatera\SyliusBuyboxPlugin\Exception\PaymentNotFoundException;
 
 final class PaymentProvider implements PaymentProviderInterface
 {

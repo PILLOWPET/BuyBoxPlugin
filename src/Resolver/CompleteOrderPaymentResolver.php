@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Resolver;
+namespace Onatera\SyliusBuyboxPlugin\Resolver;
 
 use Payum\Core\Payum;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Payum\Request\CompleteOrder;
+use Onatera\SyliusBuyboxPlugin\Payum\Request\CompleteOrder;
 
 final class CompleteOrderPaymentResolver implements CompleteOrderPaymentResolverInterface
 {

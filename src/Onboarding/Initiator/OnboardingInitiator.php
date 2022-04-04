@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Onboarding\Initiator;
+namespace Onatera\SyliusBuyboxPlugin\Onboarding\Initiator;
 
 use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\UrlUtils;
+use Onatera\SyliusBuyboxPlugin\UrlUtils;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Security;
 

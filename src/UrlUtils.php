@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin;
+namespace Onatera\SyliusBuyboxPlugin;
 
 /**
  * Code copied from https://github.com/Nyholm/append_query_string.

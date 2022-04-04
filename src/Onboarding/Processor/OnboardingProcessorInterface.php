@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Onboarding\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Onboarding\Processor;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Symfony\Component\HttpFoundation\Request;

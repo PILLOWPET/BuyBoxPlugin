@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Generator;
+namespace Onatera\SyliusBuyboxPlugin\Generator;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 

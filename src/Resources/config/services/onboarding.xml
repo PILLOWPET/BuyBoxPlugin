@@ -3,8 +3,8 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service
-            id="Sylius\BuyboxPlugin\Onboarding\Initiator\OnboardingInitiatorInterface"
-            class="Sylius\BuyboxPlugin\Onboarding\Initiator\OnboardingInitiator"
+            id="Onatera\SyliusBuyboxPlugin\Onboarding\Initiator\OnboardingInitiatorInterface"
+            class="Onatera\SyliusBuyboxPlugin\Onboarding\Initiator\OnboardingInitiator"
         >
             <argument type="service" id="router" />
             <argument type="service" id="security.helper" />
@@ -12,11 +12,11 @@
         </service>
 
         <service
-            id="Sylius\BuyboxPlugin\Onboarding\Processor\OnboardingProcessorInterface"
-            class="Sylius\BuyboxPlugin\Onboarding\Processor\BasicOnboardingProcessor"
+            id="Onatera\SyliusBuyboxPlugin\Onboarding\Processor\OnboardingProcessorInterface"
+            class="Onatera\SyliusBuyboxPlugin\Onboarding\Processor\BasicOnboardingProcessor"
         >
             <argument type="service" id="sylius.http_client" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Registrar\SellerWebhookRegistrarInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Registrar\SellerWebhookRegistrarInterface" />
             <argument>%sylius.pay_pal.facilitator_url%</argument>
         </service>
     </services>

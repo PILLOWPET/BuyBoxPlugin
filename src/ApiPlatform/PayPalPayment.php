@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\ApiPlatform;
+namespace Onatera\SyliusBuyboxPlugin\ApiPlatform;
 
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Provider\AvailableCountriesProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\AvailableCountriesProviderInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 

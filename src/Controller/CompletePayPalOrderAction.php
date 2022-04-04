@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Controller;
+namespace Onatera\SyliusBuyboxPlugin\Controller;
 
 use Sylius\Component\Core\Model\PaymentInterface;
-use Sylius\BuyboxPlugin\Manager\PaymentStateManagerInterface;
-use Sylius\BuyboxPlugin\Provider\OrderProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\OrderProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

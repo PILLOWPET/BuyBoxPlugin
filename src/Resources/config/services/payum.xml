@@ -3,38 +3,38 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service
-            id="sylius.plugin.pay_pal.gateway_factory_builder"
+            id="sylius.plugin.buybox.gateway_factory_builder"
             class="Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder"
         >
-            <argument>Sylius\BuyboxPlugin\Payum\Factory\PayPalGatewayFactory</argument>
-            <tag name="payum.gateway_factory_builder" factory="sylius.pay_pal" />
+            <argument>Onatera\SyliusBuyboxPlugin\Payum\Factory\BuyboxGatewayFactory</argument>
+            <tag name="payum.gateway_factory_builder" factory="sylius.buybox" />
         </service>
 
-        <service id="Sylius\BuyboxPlugin\Payum\Action\AuthorizeAction" public="true">
-            <tag name="payum.action" factory="sylius.pay_pal" alias="payum.action.authorize" />
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\AuthorizeAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.authorize" />
         </service>
 
-        <service id="Sylius\BuyboxPlugin\Payum\Action\CaptureAction" public="true">
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\CreateOrderApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\UuidProviderInterface" />
-            <tag name="payum.action" factory="sylius.pay_pal" alias="payum.action.capture" />
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\CaptureAction" public="true">
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CreateOrderApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface" />
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.capture" />
         </service>
 
-        <service id="Sylius\BuyboxPlugin\Payum\Action\CompleteOrderAction" public="true">
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\UpdateOrderApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\CompleteOrderApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Api\OrderDetailsApiInterface" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Processor\PayPalAddressProcessor" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Updater\PaymentUpdaterInterface" />
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\CompleteOrderAction" public="true">
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Updater\PaymentUpdaterInterface" />
             <argument type="service" id="sylius.state_resolver.order_payment" />
-            <argument type="service" id="Sylius\BuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
-            <tag name="payum.action" factory="sylius.pay_pal" alias="payum.action.complete_order" />
+            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.complete_order" />
         </service>
 
-        <service id="Sylius\BuyboxPlugin\Payum\Action\ResolveNextRouteAction" public="true">
-            <tag name="payum.action" factory="sylius.pay_pal" alias="sylius.resolve_next_route" />
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\ResolveNextRouteAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="sylius.resolve_next_route" />
         </service>
     </services>
 </container>

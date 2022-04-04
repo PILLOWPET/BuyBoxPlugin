@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Onboarding\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Onboarding\Processor;
 
 use GuzzleHttp\ClientInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Exception\BuyboxPluginException;
-use Sylius\BuyboxPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
-use Sylius\BuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
-use Sylius\BuyboxPlugin\Registrar\SellerWebhookRegistrarInterface;
+use Onatera\SyliusBuyboxPlugin\Exception\BuyboxPluginException;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalWebhookAlreadyRegisteredException;
+use Onatera\SyliusBuyboxPlugin\Exception\PayPalWebhookUrlNotValidException;
+use Onatera\SyliusBuyboxPlugin\Registrar\SellerWebhookRegistrarInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Webmozart\Assert\Assert;
 

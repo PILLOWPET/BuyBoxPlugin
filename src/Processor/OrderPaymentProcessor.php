@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Processor;
 
 use SM\Factory\FactoryInterface;
 use Sylius\Bundle\PayumBundle\Model\GatewayConfigInterface;

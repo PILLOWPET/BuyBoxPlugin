@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Controller;
+namespace Onatera\SyliusBuyboxPlugin\Controller;
 
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Locale\Context\LocaleContextInterface;
-use Sylius\BuyboxPlugin\Processor\LocaleProcessorInterface;
-use Sylius\BuyboxPlugin\Provider\AvailableCountriesProviderInterface;
-use Sylius\BuyboxPlugin\Provider\PayPalConfigurationProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Processor\LocaleProcessorInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\AvailableCountriesProviderInterface;
+use Onatera\SyliusBuyboxPlugin\Provider\PayPalConfigurationProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

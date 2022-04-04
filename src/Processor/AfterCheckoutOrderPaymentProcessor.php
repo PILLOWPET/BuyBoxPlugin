@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Processor;
+namespace Onatera\SyliusBuyboxPlugin\Processor;
 
 use Sylius\Component\Core\Model\OrderInterface as CoreOrderInterface;
 use Sylius\Component\Core\OrderCheckoutStates;

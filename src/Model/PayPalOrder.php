@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Model;
+namespace Onatera\SyliusBuyboxPlugin\Model;
 
 use Sylius\Component\Core\Model\OrderInterface;
 

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Enabler;
+namespace Onatera\SyliusBuyboxPlugin\Enabler;
 
 use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Sylius\BuyboxPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
+use Onatera\SyliusBuyboxPlugin\Exception\PaymentMethodCouldNotBeEnabledException;
 
 interface PaymentMethodEnablerInterface
 {

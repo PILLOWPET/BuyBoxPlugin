@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\DependencyInjection;
+namespace Onatera\SyliusBuyboxPlugin\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class SyliusPayPalExtension extends Extension implements PrependExtensionInterface
+final class OnateraSyliusBuyboxExtension extends Extension implements PrependExtensionInterface
 {
     public function load(array $config, ContainerBuilder $container): void
     {
@@ -58,14 +58,14 @@ final class SyliusPayPalExtension extends Extension implements PrependExtensionI
             'migrations_paths' => \array_merge(
                 $migrationsPath ?? [],
                 [
-                    'Sylius\BuyboxPlugin\Migrations' => '@SyliusBuyboxPlugin/Migrations',
+                    'Onatera\SyliusBuyboxPlugin\Migrations' => '@OnateraSyliusBuyboxPlugin/Migrations',
                 ]
             ),
         ]);
 
         $container->prependExtensionConfig('sylius_labs_doctrine_migrations_extra', [
             'migrations' => [
-                'Sylius\BuyboxPlugin\Migrations' => ['Sylius\Bundle\CoreBundle\Migrations'],
+                'Onatera\SyliusBuyboxPlugin\Migrations' => ['Sylius\Bundle\CoreBundle\Migrations'],
             ],
         ]);
     }

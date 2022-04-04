@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\BuyboxPlugin\Manager;
+namespace Onatera\SyliusBuyboxPlugin\Manager;
 
 use Doctrine\Persistence\ObjectManager;
 use SM\Factory\FactoryInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Payment\PaymentTransitions;
 use Sylius\Component\Resource\StateMachine\StateMachineInterface;
-use Sylius\BuyboxPlugin\Payum\Action\StatusAction;
-use Sylius\BuyboxPlugin\Processor\PaymentCompleteProcessorInterface;
+use Onatera\SyliusBuyboxPlugin\Payum\Action\StatusAction;
+use Onatera\SyliusBuyboxPlugin\Processor\PaymentCompleteProcessorInterface;
 
 final class PaymentStateManager implements PaymentStateManagerInterface
 {
