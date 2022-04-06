@@ -13,10 +13,6 @@
             <tag name="form.type_extension" extended-type="Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType" />
         </service>
 
-        <service id="Onatera\SyliusBuyboxPlugin\Form\Type\PayPalConfigurationType">
-            <tag name="sylius.gateway_configuration_type" type="sylius.buybox" label="sylius.buybox.label" />
-        </service>
-
         <service
             id="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGeneratorInterface"
             class="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGenerator"

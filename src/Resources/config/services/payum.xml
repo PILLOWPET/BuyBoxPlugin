@@ -13,11 +13,56 @@
         <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\AuthorizeAction" public="true">
             <tag name="payum.action" factory="sylius.buybox" alias="payum.action.authorize" />
         </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\CancelAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.cancel" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\ConvertPaymentAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.convert_payment" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\NotifyAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.notify" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\PaymentDetailsStatusAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.status" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\PaymentDetailsSyncAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.sync" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\SetExpressCheckoutAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.set_express_checkout" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\GetTransactionDetailsAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.get_transaction_details" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\GetExpressCheckoutDetailsAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.get_express_checkout_details" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\DoExpressCheckoutPaymentAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.do_express_checkout_payment" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\CreateBillingAgreementAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.create_billing_agreement" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\DoReferenceTransactionAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.do_reference_transaction" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\DoCaptureAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.do_capture" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\AuthorizeTokenAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.authorize_token" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\RefundTransactionAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.refund_transaction" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\DoVoidAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.do_void" />
+        </service>
+        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\Api\TransactionSearchAction" public="true">
+            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.api.transaction_search" />
+        </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\CaptureAction" public="true">
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CreateOrderApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface" />
             <tag name="payum.action" factory="sylius.buybox" alias="payum.action.capture" />
         </service>
 

@@ -1,42 +1,37 @@
 <?php
-
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-declare(strict_types=1);
-
 namespace Onatera\SyliusBuyboxPlugin\Payum\Action;
 
-use Payum\Core\Action\ActionInterface;
-use Payum\Core\Exception\RequestNotSupportedException;
+use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\Request\Authorize;
 use Payum\Core\Request\Capture;
-use Sylius\Component\Core\Model\PaymentInterface;
+use Payum\Core\Exception\RequestNotSupportedException;
+use Onatera\SyliusBuyboxPlugin\Payum\Api;
 
-final class AuthorizeAction implements ActionInterface
+class AuthorizeAction extends PurchaseAction
 {
-    /** @param Capture $request */
-    public function execute($request): void
+    /**
+     * {@inheritDoc}
+     */
+    public function execute($request)
     {
+        /** @var $request Capture */
         RequestNotSupportedException::assertSupports($this, $request);
 
-        /** @var PaymentInterface $payment */
-        $payment = $request->getModel();
+        $details = ArrayObject::ensureArrayObject($request->getModel());
 
-        $payment->setDetails(['status' => StatusAction::STATUS_CREATED]);
+        $details['PAYMENTREQUEST_0_PAYMENTACTION'] = Api::PAYMENTACTION_AUTHORIZATION;
+
+        parent::execute($request);
     }
 
-    public function supports($request): bool
+    /**
+     * {@inheritDoc}
+     */
+    public function supports($request)
     {
         return
             $request instanceof Authorize &&
-            $request->getModel() instanceof PaymentInterface
+            $request->getModel() instanceof \ArrayAccess
         ;
     }
 }

@@ -1,0 +1,52 @@
+<?php
+namespace Onatera\SyliusBuyboxPlugin\Payum\Action;
+
+use Payum\Core\Action\ActionInterface;
+use Payum\Core\Bridge\Spl\ArrayObject;
+use Payum\Core\Exception\RequestNotSupportedException;
+use Payum\Core\GatewayAwareInterface;
+use Payum\Core\GatewayAwareTrait;
+use Payum\Core\Request\Cancel;
+use Payum\Core\Request\Sync;
+use Onatera\SyliusBuyboxPlugin\Payum\Request\Api\DoVoid;
+
+class CancelAction implements ActionInterface, GatewayAwareInterface
+{
+    use GatewayAwareTrait;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function execute($request)
+    {
+        /** @var $request Cancel */
+        RequestNotSupportedException::assertSupports($this, $request);
+
+        $details = ArrayObject::ensureArrayObject($request->getModel());
+
+        if (!$details['TRANSACTIONID']) {
+            return;
+        }
+
+        $voidDetails = new ArrayObject([
+            'AUTHORIZATIONID' => $details['TRANSACTIONID'],
+        ]);
+
+        $this->gateway->execute(new DoVoid($voidDetails));
+        $this->gateway->execute(new Sync($request->getModel()));
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function supports($request)
+    {
+        if (false == ($request instanceof Cancel && $request->getModel() instanceof \ArrayAccess)) {
+            return false;
+        }
+
+        // it must take into account only common payments, recurring payments must be cancelled by another action.
+        $model = $request->getModel();
+        return empty($model['BILLINGPERIOD']);
+    }
+}

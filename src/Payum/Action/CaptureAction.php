@@ -1,74 +1,45 @@
 <?php
-
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-declare(strict_types=1);
-
 namespace Onatera\SyliusBuyboxPlugin\Payum\Action;
 
-use Payum\Core\Action\ActionInterface;
-use Payum\Core\Exception\RequestNotSupportedException;
+use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\Request\Capture;
-use Sylius\Component\Core\Model\PaymentInterface;
-use Sylius\Component\Core\Model\PaymentMethodInterface;
-use Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface;
-use Onatera\SyliusBuyboxPlugin\Api\CreateOrderApiInterface;
-use Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface;
+use Payum\Core\Exception\RequestNotSupportedException;
+use Onatera\SyliusBuyboxPlugin\Payum\Api;
+use Onatera\SyliusBuyboxPlugin\Payum\Request\Api\DoCapture;
 
-final class CaptureAction implements ActionInterface
+class CaptureAction extends PurchaseAction
 {
-    private CacheAuthorizeClientApiInterface $authorizeClientApi;
-
-    private CreateOrderApiInterface $createOrderApi;
-
-    private UuidProviderInterface $uuidProvider;
-
-    public function __construct(
-        CacheAuthorizeClientApiInterface $authorizeClientApi,
-        CreateOrderApiInterface $createOrderApi,
-        UuidProviderInterface $uuidProvider
-    ) {
-        $this->authorizeClientApi = $authorizeClientApi;
-        $this->createOrderApi = $createOrderApi;
-        $this->uuidProvider = $uuidProvider;
-    }
-
-    /** @param Capture $request */
-    public function execute($request): void
+    /**
+     * {@inheritDoc}
+     */
+    public function execute($request)
     {
+        /** @var $request Capture */
         RequestNotSupportedException::assertSupports($this, $request);
 
-        /** @var PaymentInterface $payment */
-        $payment = $request->getModel();
-        /** @var PaymentMethodInterface $paymentMethod */
-        $paymentMethod = $payment->getMethod();
+        $details = ArrayObject::ensureArrayObject($request->getModel());
 
-        $token = $this->authorizeClientApi->authorize($paymentMethod);
+        $details['PAYMENTREQUEST_0_PAYMENTACTION'] = Api::PAYMENTACTION_SALE;
 
-        $referenceId = $this->uuidProvider->provide();
-        $content = $this->createOrderApi->create($token, $payment, $referenceId);
+        foreach (range(0, 9) as $index) {
+            if (Api::PENDINGREASON_AUTHORIZATION == $details['PAYMENTINFO_'.$index.'_PENDINGREASON']) {
+                $details->defaults(['PAYMENTREQUEST_'.$index.'_COMPLETETYPE' => 'Complete']);
 
-        if ($content['status'] === 'CREATED') {
-            $payment->setDetails([
-                'status' => StatusAction::STATUS_CAPTURED,
-                'paypal_order_id' => $content['id'],
-                'reference_id' => $referenceId,
-            ]);
+                $this->gateway->execute(new DoCapture($details, $index));
+            }
         }
+
+        parent::execute($request);
     }
 
-    public function supports($request): bool
+    /**
+     * {@inheritDoc}
+     */
+    public function supports($request)
     {
         return
             $request instanceof Capture &&
-            $request->getModel() instanceof PaymentInterface
+            $request->getModel() instanceof \ArrayAccess
         ;
     }
 }
