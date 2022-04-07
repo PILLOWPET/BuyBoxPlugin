@@ -29,8 +29,8 @@ class SetExpressCheckoutAction implements ActionInterface, ApiAwareInterface
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
 
-        if (null === $model['PAYMENTREQUEST_0_AMT']) {
-            throw new LogicException('The PAYMENTREQUEST_0_AMT must be set.');
+        if (null === $model['AMT']) {
+            throw new LogicException('The AMT must be set.');
         }
 
         $model->replace(

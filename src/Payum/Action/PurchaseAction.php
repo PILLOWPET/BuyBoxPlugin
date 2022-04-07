@@ -56,15 +56,6 @@ abstract class PurchaseAction implements ActionInterface, GatewayAwareInterface,
                 $details['CANCELURL'] = $request->getToken()->getTargetUrl();
             }
 
-            if (empty($details['PAYMENTREQUEST_0_NOTIFYURL']) && $request->getToken() && $this->tokenFactory) {
-                $notifyToken = $this->tokenFactory->createNotifyToken(
-                    $request->getToken()->getGatewayName(),
-                    $request->getToken()->getDetails()
-                );
-
-                $details['PAYMENTREQUEST_0_NOTIFYURL'] = $notifyToken->getTargetUrl();
-            }
-
             if ($details['CANCELURL']) {
                 $cancelUri = HttpUri::createFromString($details['CANCELURL']);
                 $cancelUri = UriModifier::mergeQuery($cancelUri, 'cancelled=1');

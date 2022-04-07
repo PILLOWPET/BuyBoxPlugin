@@ -31,9 +31,9 @@ class ConvertPaymentAction implements ActionInterface, GatewayAwareInterface
 
         $details = ArrayObject::ensureArrayObject($payment->getDetails());
         $details['INVNUM'] = $payment->getNumber();
-        $details['PAYMENTREQUEST_0_CURRENCYCODE'] = $payment->getCurrencyCode();
-        $details['PAYMENTREQUEST_0_AMT'] = $payment->getTotalAmount() / $divisor;
-        $details['PAYMENTREQUEST_0_DESC'] = $payment->getDescription();
+        $details['CURRENCYCODE'] = $payment->getCurrencyCode();
+        $details['AMT'] = $payment->getTotalAmount() / $divisor;
+        $details['DESC'] = $payment->getDescription();
         
         $request->setResult((array) $details);
     }
