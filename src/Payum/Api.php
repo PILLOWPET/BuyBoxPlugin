@@ -627,8 +627,8 @@ class Api
         $query = array_filter($query);
 
         return sprintf(
-            'https://%s/cgi-bin/webscr?%s',
-            $this->options['sandbox'] ? 'www.sandbox.buybox.net' : 'www2.buybox.net',
+            'https://%s/secure/payment_login.php?%s',
+            $this->options['sandbox'] ? 'sandbox.buybox.net' : 'www2.buybox.net',
             http_build_query(array_replace($defaultQuery, $query))
         );
     }
