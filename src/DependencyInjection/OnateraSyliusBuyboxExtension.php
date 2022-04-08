@@ -8,10 +8,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class OnateraSyliusBuyboxExtension extends Extension implements PrependExtensionInterface
+final class OnateraSyliusBuyboxExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container): void
     {
@@ -37,4 +36,5 @@ final class OnateraSyliusBuyboxExtension extends Extension implements PrependExt
     {
         return new Configuration();
     }
+
 }
