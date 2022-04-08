@@ -37,36 +37,4 @@ final class OnateraSyliusBuyboxExtension extends Extension implements PrependExt
     {
         return new Configuration();
     }
-
-    public function prepend(ContainerBuilder $container): void
-    {
-        if (!$container->hasExtension('doctrine_migrations') || !$container->hasExtension('sylius_labs_doctrine_migrations_extra')) {
-            return;
-        }
-
-        if (
-            $container->hasParameter('sylius_core.prepend_doctrine_migrations') &&
-            !$container->getParameter('sylius_core.prepend_doctrine_migrations')
-        ) {
-            return;
-        }
-
-        /** @var array<int|string, mixed> $doctrineConfig */
-        $doctrineConfig = $container->getExtensionConfig('doctrine_migrations');
-        $migrationsPath = (array) \array_pop($doctrineConfig)['migrations_paths'];
-        $container->prependExtensionConfig('doctrine_migrations', [
-            'migrations_paths' => \array_merge(
-                $migrationsPath ?? [],
-                [
-                    'Onatera\SyliusBuyboxPlugin\Migrations' => '@OnateraSyliusBuyboxPlugin/Migrations',
-                ]
-            ),
-        ]);
-
-        $container->prependExtensionConfig('sylius_labs_doctrine_migrations_extra', [
-            'migrations' => [
-                'Onatera\SyliusBuyboxPlugin\Migrations' => ['Sylius\Bundle\CoreBundle\Migrations'],
-            ],
-        ]);
-    }
 }
