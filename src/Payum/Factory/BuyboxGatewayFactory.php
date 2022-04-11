@@ -47,9 +47,6 @@ final class BuyboxGatewayFactory extends GatewayFactory
                     'password' => $config['password'],
                     'signature' => $config['signature'],
                     'sandbox' => $config['sandbox'],
-                    'local' => $config['local'],
-                    'ngrokUrl' => $config['ngrokUrl'],
-                    'localUrl' => $config['localUrl']
                 );
 
                 return new Api($paypalConfig, $config['payum.http_client'], $config['httplug.message_factory']);
