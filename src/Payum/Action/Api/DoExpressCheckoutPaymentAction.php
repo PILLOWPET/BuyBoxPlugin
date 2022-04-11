@@ -35,8 +35,8 @@ class DoExpressCheckoutPaymentAction implements ActionInterface, ApiAwareInterfa
         if (null === $model['PAYERID']) {
             throw new LogicException('PAYERID must be set. Has user authorized this transaction?');
         }
-        if (null === $model['PAYMENTREQUEST_0_PAYMENTACTION']) {
-            throw new LogicException('PAYMENTREQUEST_0_PAYMENTACTION must be set.');
+        if (null === $model['PAYMENTACTION']) {
+            throw new LogicException('PAYMENTACTION must be set.');
         }
         if (null === $model['AMT']) {
             throw new LogicException('AMT must be set.');

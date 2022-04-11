@@ -19,7 +19,7 @@ class CaptureAction extends PurchaseAction
 
         $details = ArrayObject::ensureArrayObject($request->getModel());
 
-        $details['PAYMENTREQUEST_0_PAYMENTACTION'] = Api::PAYMENTACTION_SALE;
+        $details['PAYMENTACTION'] = Api::PAYMENTACTION_SALE;
 
         foreach (range(0, 9) as $index) {
             if (Api::PENDINGREASON_AUTHORIZATION == $details['PAYMENTINFO_'.$index.'_PENDINGREASON']) {

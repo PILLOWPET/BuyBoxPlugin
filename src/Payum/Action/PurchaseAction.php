@@ -34,7 +34,7 @@ abstract class PurchaseAction implements ActionInterface, GatewayAwareInterface,
 
         $details = ArrayObject::ensureArrayObject($request->getModel());
 
-        $details->validateNotEmpty('PAYMENTREQUEST_0_PAYMENTACTION');
+        $details->validateNotEmpty('PAYMENTACTION');
 
         $details->defaults(array(
             'AUTHORIZE_TOKEN_USERACTION' => Api::USERACTION_COMMIT,
