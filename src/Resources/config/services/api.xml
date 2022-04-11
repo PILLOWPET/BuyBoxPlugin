@@ -28,14 +28,6 @@
         </service>
 
         <service
-            id="sylius_pay_pal_plugin.repository.pay_pal_credentials"
-            class="Doctrine\ORM\EntityRepository"
-        >
-            <factory service="doctrine.orm.entity_manager" method="getRepository"/>
-            <argument>Onatera\SyliusBuyboxPlugin\Entity\PayPalCredentials</argument>
-        </service>
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface"
             class="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApi"
         >
