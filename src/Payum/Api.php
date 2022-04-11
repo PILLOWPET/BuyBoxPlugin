@@ -306,6 +306,9 @@ class Api
         'return_url' => null,
         'cancel_url' => null,
         'sandbox' => null,
+        'local' => null,
+        'ngrokUrl' => null,
+        'localUrl' => null,
         'useraction' => null,
         'cmd' => Api::CMD_EXPRESS_CHECKOUT,
     );
@@ -327,6 +330,10 @@ class Api
 
         if (false == is_bool($options['sandbox'])) {
             throw new InvalidArgumentException('The boolean sandbox option must be set.');
+        }
+
+        if (isset($options['local']) && $options['local'] && (!isset($options['ngrokUrl']) || !isset($options['localUrl']))) {
+            throw new InvalidArgumentException('The ngrokUrl & localUrl options must be set if local option is true');
         }
 
         $this->options = $options;
@@ -593,7 +600,14 @@ class Api
             'Content-Type' => 'application/x-www-form-urlencoded',
         );
 
-        $request = $this->messageFactory->createRequest('POST', $this->getApiEndpoint(), $headers, http_build_query($fields));
+        if (isset($fields["RETURNURL"]) && $this->options["sandbox"]){
+            $fields["RETURNURL"] = str_replace($this->options["localUrl"], $this->options["ngrokUrl"], $fields["RETURNURL"]);
+            $fields["CANCELURL"] = str_replace($this->options["localUrl"], $this->options["ngrokUrl"], $fields["CANCELURL"]);
+        }
+
+        $fields_in_qs = http_build_query($fields);
+
+        $request = $this->messageFactory->createRequest('POST', $this->getApiEndpoint(), $headers, $fields_in_qs);
 
         $response = $this->client->send($request);
 
