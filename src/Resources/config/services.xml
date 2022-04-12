@@ -8,11 +8,6 @@
 
     <services>
         <service
-            id="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGeneratorInterface"
-            class="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGenerator"
-        />
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface"
             class="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManager"
         >
