@@ -17,12 +17,6 @@
             class="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGenerator"
         />
 
-        <service id="Onatera\SyliusBuyboxPlugin\ApiPlatform\PayPalPayment">
-            <argument type="service" id="router" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\AvailableCountriesProviderInterface" />
-            <tag name="sylius.api.payment_method_handler" />
-        </service>
-
         <service id="Onatera\SyliusBuyboxPlugin\Listener\PayPalPaymentMethodListener">
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Onboarding\Initiator\OnboardingInitiatorInterface" />
             <argument type="service" id="router" />
