@@ -89,25 +89,6 @@
         />
 
         <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\PaymentRefundProcessorInterface"
-            class="Onatera\SyliusBuyboxPlugin\Processor\PayPalPaymentRefundProcessor"
-            public="true"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\RefundPaymentApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGeneratorInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\RefundReferenceNumberProviderInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\UiPayPalPaymentRefundProcessor"
-            decorates="Onatera\SyliusBuyboxPlugin\Processor\PaymentRefundProcessorInterface"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\UiPayPalPaymentRefundProcessor.inner" />
-        </service>
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Provider\PayPalConfigurationProviderInterface"
             class="Onatera\SyliusBuyboxPlugin\Provider\PayPalConfigurationProvider"
         >
@@ -121,13 +102,6 @@
 
         <service id="sylius.paypal.client.sftp" class="phpseclib\Net\SFTP">
             <argument>%sylius.pay_pal.reports_sftp_host%</argument>
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Downloader\ReportDownloaderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Downloader\SftpPayoutsReportDownloader"
-        >
-            <argument type="service" id="sylius.paypal.client.sftp" />
         </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor">
