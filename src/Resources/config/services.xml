@@ -3,7 +3,6 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <imports>
         <import resource="services/api.xml"/>
-        <import resource="services/onboarding.xml"/>
         <import resource="services/payum.xml"/>
     </imports>
 
@@ -13,14 +12,6 @@
             class="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGenerator"
         />
 
-        <service id="Onatera\SyliusBuyboxPlugin\Listener\PayPalPaymentMethodListener">
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Onboarding\Initiator\OnboardingInitiatorInterface" />
-            <argument type="service" id="router" />
-            <argument type="service" id="session.flash_bag" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalPaymentMethodProviderInterface" />
-            <tag name="kernel.event_listener" event="sylius.payment_method.initialize_create" method="initializeCreate" />
-        </service>
-
         <service
             id="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface"
             class="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManager"
@@ -29,12 +20,6 @@
             <argument type="service" id="sylius.manager.payment" />
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\PaymentCompleteProcessorInterface" />
         </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Factory\PayPalPaymentMethodNewResourceFactory" decorates="sylius.resource_controller.new_resource_factory">
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Factory\PayPalPaymentMethodNewResourceFactory.inner" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Onboarding\Processor\OnboardingProcessorInterface" />
-        </service>
-
 
         <service
             id="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxProviderInterface"
@@ -154,16 +139,6 @@
             class="Onatera\SyliusBuyboxPlugin\Updater\PayPalPaymentUpdater"
         >
             <argument type="service" id="sylius.manager.payment" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Enabler\PaymentMethodEnablerInterface"
-            class="Onatera\SyliusBuyboxPlugin\Enabler\PayPalPaymentMethodEnabler"
-        >
-            <argument type="service" id="sylius.http_client" />
-            <argument>%sylius.pay_pal.facilitator_url%</argument>
-            <argument type="service" id="sylius.manager.payment_method" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Registrar\SellerWebhookRegistrarInterface" />
         </service>
 
         <service
