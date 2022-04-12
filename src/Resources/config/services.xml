@@ -134,15 +134,6 @@
             class="Onatera\SyliusBuyboxPlugin\Provider\RefundReferenceNumberProvider"
         />
 
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Registrar\SellerWebhookRegistrarInterface"
-            class="Onatera\SyliusBuyboxPlugin\Registrar\SellerWebhookRegistrar"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface" />
-            <argument type="service" id="router" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\WebhookApiInterface" />
-        </service>
-
         <service id="Onatera\SyliusBuyboxPlugin\Twig\PayPalExtension">
             <tag name="twig.extension" />
         </service>
