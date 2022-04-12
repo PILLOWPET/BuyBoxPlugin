@@ -39,17 +39,6 @@
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Onboarding\Processor\OnboardingProcessorInterface" />
         </service>
 
-        <service id="Onatera\SyliusBuyboxPlugin\Provider\OrderProviderInterface" class="Onatera\SyliusBuyboxPlugin\Provider\OrderProvider">
-            <argument type="service" id="sylius.repository.order" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\PaymentProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\PaymentProvider"
-        >
-            <argument type="service" id="sylius.repository.payment" />
-            <argument type="service" id="sylius.repository.order" />
-        </service>
 
         <service
             id="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxProviderInterface"
@@ -77,13 +66,6 @@
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\GenericApiInterface" />
             <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalPaymentMethodProviderInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\PayPalOrderProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\PayPalOrderProvider"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PaymentProviderInterface" />
         </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolverInterface" class="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolver">
