@@ -80,14 +80,6 @@
         </service>
 
         <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\AvailableCountriesProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\AvailableCountriesProvider"
-        >
-            <argument type="service" id="sylius.repository.country" />
-            <argument type="service" id="sylius.context.channel" />
-        </service>
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Provider\PayPalOrderProviderInterface"
             class="Onatera\SyliusBuyboxPlugin\Provider\PayPalOrderProvider"
         >
