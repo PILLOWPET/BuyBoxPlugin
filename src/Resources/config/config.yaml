@@ -18,12 +18,6 @@ winzou_state_machine:
                 from: [cart]
                 to: cancelled
 
-sylius_order:
-    resources:
-        order_item:
-            classes:
-                controller: Onatera\SyliusBuyboxPlugin\Controller\PayPalOrderItemController
-
 sylius_grid:
     templates:
         action:
