@@ -8,10 +8,6 @@
     </imports>
 
     <services>
-        <service id="Onatera\SyliusBuyboxPlugin\Form\Extension\PaymentMethodTypeExtension">
-            <tag name="form.type_extension" extended-type="Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType" />
-        </service>
-
         <service
             id="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGeneratorInterface"
             class="Onatera\SyliusBuyboxPlugin\Generator\PayPalAuthAssertionGenerator"
