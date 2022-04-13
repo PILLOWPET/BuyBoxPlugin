@@ -4,14 +4,4 @@
     <imports>
         <import resource="services/payum.xml"/>
     </imports>
-
-    <services>
-        <service id="sylius.paypal.client.sftp" class="phpseclib\Net\SFTP">
-            <argument>%sylius.pay_pal.reports_sftp_host%</argument>
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor">
-            <argument type="service" id="doctrine.orm.entity_manager" />
-        </service>
-    </services>
 </container>
