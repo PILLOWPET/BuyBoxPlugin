@@ -66,18 +66,6 @@
             <tag name="payum.action" factory="sylius.buybox" alias="payum.action.capture" />
         </service>
 
-        <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\CompleteOrderAction" public="true">
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Updater\PaymentUpdaterInterface" />
-            <argument type="service" id="sylius.state_resolver.order_payment" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
-            <tag name="payum.action" factory="sylius.buybox" alias="payum.action.complete_order" />
-        </service>
-
         <service id="Onatera\SyliusBuyboxPlugin\Payum\Action\ResolveNextRouteAction" public="true">
             <tag name="payum.action" factory="sylius.buybox" alias="sylius.resolve_next_route" />
         </service>

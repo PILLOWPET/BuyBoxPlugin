@@ -19,45 +19,5 @@
             <argument>%sylius.pay_pal.request_trials_limit%</argument>
             <argument>%sylius.paypal.logging.increased%</argument>
         </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface"
-            class="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApi"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface"
-            class="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApi"
-        >
-            <argument type="service" id="doctrine.orm.entity_manager" />
-            <argument type="service" id="sylius_pay_pal_plugin.repository.pay_pal_credentials" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\AuthorizeClientApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\UuidProviderInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApiInterface"
-            class="Onatera\SyliusBuyboxPlugin\Api\CompleteOrderApi"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApiInterface"
-            class="Onatera\SyliusBuyboxPlugin\Api\OrderDetailsApi"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApiInterface"
-            class="Onatera\SyliusBuyboxPlugin\Api\UpdateOrderApi"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Client\PayPalClientInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface" />
-        </service>
     </services>
 </container>
