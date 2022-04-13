@@ -6,28 +6,12 @@
     </imports>
 
     <services>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\PaymentCompleteProcessorInterface"
-            class="Onatera\SyliusBuyboxPlugin\Processor\PayPalPaymentCompleteProcessor"
-        >
-            <argument type="service" id="payum" />
-        </service>
-
         <service id="sylius.paypal.client.sftp" class="phpseclib\Net\SFTP">
             <argument>%sylius.pay_pal.reports_sftp_host%</argument>
         </service>
 
         <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor">
             <argument type="service" id="doctrine.orm.entity_manager" />
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Twig\PayPalExtension">
-            <tag name="twig.extension" />
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Twig\OrderAddressExtension">
-            <tag name="twig.extension" />
         </service>
     </services>
 </container>
