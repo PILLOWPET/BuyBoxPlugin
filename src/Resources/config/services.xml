@@ -29,21 +29,6 @@
         </service>
 
         <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\PayPalPaymentMethodProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\PayPalPaymentMethodProvider"
-        >
-            <argument type="service" id="sylius.repository.payment_method" />
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolverInterface" class="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolver">
-            <argument type="service" id="payum" />
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Resolver\CompleteOrderPaymentResolverInterface" class="Onatera\SyliusBuyboxPlugin\Resolver\CompleteOrderPaymentResolver">
-            <argument type="service" id="payum" />
-        </service>
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Processor\AfterCheckoutOrderPaymentProcessor"
             decorates="sylius.order_processing.order_payment_processor.after_checkout"
         >
@@ -68,11 +53,6 @@
         >
             <argument type="service" id="payum" />
         </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\LocaleProcessorInterface"
-            class="Onatera\SyliusBuyboxPlugin\Processor\LocaleProcessor"
-        />
 
         <service
             id="Onatera\SyliusBuyboxPlugin\Provider\PayPalConfigurationProviderInterface"
@@ -104,11 +84,6 @@
         <service
             id="Onatera\SyliusBuyboxPlugin\Provider\PaymentReferenceNumberProviderInterface"
             class="Onatera\SyliusBuyboxPlugin\Provider\PaymentReferenceNumberProvider"
-        />
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\RefundReferenceNumberProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\RefundReferenceNumberProvider"
         />
 
         <service id="Onatera\SyliusBuyboxPlugin\Twig\PayPalExtension">
