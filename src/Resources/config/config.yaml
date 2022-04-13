@@ -1,11 +1,5 @@
 winzou_state_machine:
     sylius_order_checkout:
-        callbacks:
-            after:
-                complete_pay_pal_order:
-                    on: ['complete']
-                    do: ['@Onatera\SyliusBuyboxPlugin\Processor\PayPalOrderCompleteProcessor', 'completePayPalOrder']
-                    args: ['object']
     sylius_payment:
         transitions:
             cancel:

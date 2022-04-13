@@ -7,37 +7,9 @@
 
     <services>
         <service
-            id="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface"
-            class="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManager"
-        >
-            <argument type="service" id="sm.factory" />
-            <argument type="service" id="sylius.manager.payment" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\PaymentCompleteProcessorInterface" />
-        </service>
-
-        <service
             id="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxProviderInterface"
             class="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxesProvider"
         />
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\AfterCheckoutOrderPaymentProcessor"
-            decorates="sylius.order_processing.order_payment_processor.after_checkout"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\AfterCheckoutOrderPaymentProcessor.inner" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Processor\OrderPaymentProcessor"
-            decorates="sylius.order_processing.order_payment_processor.checkout"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Processor\OrderPaymentProcessor.inner" />
-            <argument type="service" id="sm.factory" />
-        </service>
-
-        <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalOrderCompleteProcessor" public="true">
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Manager\PaymentStateManagerInterface" />
-        </service>
 
         <service
             id="Onatera\SyliusBuyboxPlugin\Processor\PaymentCompleteProcessorInterface"
