@@ -2,7 +2,6 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <imports>
-        <import resource="services/api.xml"/>
         <import resource="services/payum.xml"/>
     </imports>
 
@@ -20,13 +19,6 @@
             id="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxProviderInterface"
             class="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxesProvider"
         />
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\PayPalItemDataProvider"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\OrderItemNonNeutralTaxProviderInterface" />
-        </service>
 
         <service
             id="Onatera\SyliusBuyboxPlugin\Processor\AfterCheckoutOrderPaymentProcessor"
@@ -72,13 +64,6 @@
 
         <service id="Onatera\SyliusBuyboxPlugin\Processor\PayPalAddressProcessor">
             <argument type="service" id="doctrine.orm.entity_manager" />
-        </service>
-
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Updater\PaymentUpdaterInterface"
-            class="Onatera\SyliusBuyboxPlugin\Updater\PayPalPaymentUpdater"
-        >
-            <argument type="service" id="sylius.manager.payment" />
         </service>
 
         <service
