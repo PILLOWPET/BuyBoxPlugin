@@ -35,15 +35,6 @@
             <argument type="service" id="sylius.repository.payment_method" />
         </service>
 
-        <service
-            id="Onatera\SyliusBuyboxPlugin\Provider\PayPalRefundDataProviderInterface"
-            class="Onatera\SyliusBuyboxPlugin\Provider\PayPalRefundDataProvider"
-        >
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\CacheAuthorizeClientApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Api\GenericApiInterface" />
-            <argument type="service" id="Onatera\SyliusBuyboxPlugin\Provider\PayPalPaymentMethodProviderInterface" />
-        </service>
-
         <service id="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolverInterface" class="Onatera\SyliusBuyboxPlugin\Resolver\CapturePaymentResolver">
             <argument type="service" id="payum" />
         </service>
