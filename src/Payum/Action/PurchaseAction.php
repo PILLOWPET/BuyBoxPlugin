@@ -47,6 +47,10 @@ abstract class PurchaseAction implements ActionInterface, GatewayAwareInterface,
             return;
         }
 
+        if (isset($httpRequest->query['PayerID'])) {
+            $details['PAYERID'] = $httpRequest->query['PayerID'];
+        }
+
         if (false == $details['TOKEN']) {
             if (false == $details['RETURNURL'] && $request->getToken()) {
                 $details['RETURNURL'] = $request->getToken()->getTargetUrl();
@@ -70,20 +74,7 @@ abstract class PurchaseAction implements ActionInterface, GatewayAwareInterface,
             }
         }
 
-        $this->gateway->execute(new Sync($details));
-
-        if (
-            $details['PAYERID'] &&
-            Api::CHECKOUTSTATUS_PAYMENT_ACTION_NOT_INITIATED == $details['CHECKOUTSTATUS'] &&
-            $details['PAYMENTREQUEST_0_AMT'] > 0
-        ) {
-            if (Api::USERACTION_COMMIT !== $details['AUTHORIZE_TOKEN_USERACTION']) {
-                $confirmOrder = new ConfirmOrder($request->getFirstModel());
-                $confirmOrder->setModel($request->getModel());
-
-                $this->gateway->execute($confirmOrder);
-            }
-
+        if ($details['PAYERID'] && $details['AMT'] > 0) {
             $this->gateway->execute(new DoExpressCheckoutPayment($details));
         }
 
