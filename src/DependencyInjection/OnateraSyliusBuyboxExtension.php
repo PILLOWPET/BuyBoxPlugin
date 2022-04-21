@@ -17,16 +17,16 @@ final class OnateraSyliusBuyboxExtension extends Extension
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
-        $container->setParameter('sylius.paypal.logging.increased', (bool) $config['logging']['increased']);
+        $container->setParameter('sylius.buybox.logging.increased', (bool) $config['logging']['increased']);
 
         if ($config['sandbox']) {
-            $container->setParameter('sylius.pay_pal.facilitator_url', 'https://paypal.sylius.com');
-            $container->setParameter('sylius.pay_pal.api_base_url', ' https://sandbox.buybox.net/');
-            $container->setParameter('sylius.pay_pal.reports_sftp_host', 'reports.sandbox.paypal.com');
+            $container->setParameter('sylius.buybox.facilitator_url', 'https://paypal.sylius.com');
+            $container->setParameter('sylius.buybox.api_base_url', ' https://sandbox.buybox.net/');
+            $container->setParameter('sylius.buybox.reports_sftp_host', 'reports.sandbox.paypal.com');
         } else {
-            $container->setParameter('sylius.pay_pal.facilitator_url', 'https://prod.paypal.sylius.com');
-            $container->setParameter('sylius.pay_pal.api_base_url', ' https://sandbox.buybox.net/');
-            $container->setParameter('sylius.pay_pal.reports_sftp_host', 'reports.paypal.com');
+            $container->setParameter('sylius.buybox.facilitator_url', 'https://prod.paypal.sylius.com');
+            $container->setParameter('sylius.buybox.api_base_url', ' https://sandbox.buybox.net/');
+            $container->setParameter('sylius.buybox.reports_sftp_host', 'reports.paypal.com');
         }
 
         $loader->load('services.xml');
