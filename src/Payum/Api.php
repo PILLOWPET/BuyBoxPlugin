@@ -307,7 +307,6 @@ class Api
         'cancel_url' => null,
         'sandbox' => null,
         'useraction' => null,
-        'cmd' => Api::CMD_EXPRESS_CHECKOUT,
     );
 
     /**
@@ -620,7 +619,6 @@ class Api
     {
         $defaultQuery = array_filter(array(
             'useraction' => $this->options['useraction'],
-            'cmd' => $this->options['cmd'],
             'token' => $token,
         ));
 

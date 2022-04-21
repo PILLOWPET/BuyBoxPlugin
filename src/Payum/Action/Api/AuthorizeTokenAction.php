@@ -40,7 +40,6 @@ class AuthorizeTokenAction implements ActionInterface, ApiAwareInterface
             throw new HttpRedirect(
                 $this->api->getAuthorizeTokenUrl($model['TOKEN'], array(
                     'useraction' => $model['AUTHORIZE_TOKEN_USERACTION'],
-                    'cmd' => $model['AUTHORIZE_TOKEN_CMD'],
                 ))
             );
         }
